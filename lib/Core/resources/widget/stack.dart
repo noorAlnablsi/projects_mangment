@@ -1,30 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:projects_mangment/Core/resources/widget/button.dart';
-import 'package:projects_mangment/Core/resources/widget/row_account.dart';
 import 'package:projects_mangment/Core/resources/widget/textfield.dart';
 
-
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class MyStack extends StatefulWidget {
+  const MyStack({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<MyStack> createState() => _MyStackState();
 }
 
-class _SignupPageState extends State<SignupPage> {
-  bool checkBoxValue = false;
-
+class _MyStackState extends State<MyStack> {
+   bool checkBoxValue = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromARGB(255, 10, 50, 77),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 90,)
-,            Stack(
+    return    Stack(
               clipBehavior: Clip.none,
               children: [
                 Card(
@@ -34,7 +22,7 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     child: Container(
                       width: 288,
-                      height: 438,
+                      height: 360,
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 217, 217, 217),
                         borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -42,27 +30,12 @@ class _SignupPageState extends State<SignupPage> {
                       child: Padding(
                         padding: const EdgeInsets.all(25.0),
                         child: Column(
-
                           // mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
                               height: 55,
                             ),
-
-
-
-  Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text("Username"),
-                            ),
-                            MyTextField(hintText: "Example"),
-                            SizedBox(
-                              height: 20,
-                            ),
-
-
-
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text("Email"),
@@ -78,16 +51,16 @@ class _SignupPageState extends State<SignupPage> {
                             MyTextField(hintText: "Enter Your Password",
                             obscureText:true,traillingIcon: Icon(Icons.visibility_off),),
                             SizedBox(
-                              height: 20,
+                              height: 25,
                             ),
                             Row(
                               children: [
                                 Checkbox(
-                                  fillColor: MaterialStateProperty.all<Color>(
+
+                                     fillColor: MaterialStateProperty.all<Color>(
              Color.fromARGB(243, 193, 193, 192)
             ),
                                   
-                             
                                   value: checkBoxValue,
                                   onChanged: (value) {
                                     setState(() {
@@ -127,14 +100,6 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
               ],
-            ),
-            SizedBox(height: 30,),
-            MyButton(text: 'Sign Up'),
-            SizedBox(height: 25,),
-         RowAccount(firstText: "Already have an account ?", secondText: "Login")
-          ],
-        ),
-      ),
-    );
+            );
   }
 }

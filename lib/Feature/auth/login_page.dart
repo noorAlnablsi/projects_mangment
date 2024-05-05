@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:projects_mangment/Core/resources/widget/button.dart';
+import 'package:projects_mangment/Core/resources/widget/row_account.dart';
 import 'package:projects_mangment/Core/resources/widget/textfield.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -66,6 +68,11 @@ class _LoginPageState extends State<LoginPage> {
                             Row(
                               children: [
                                 Checkbox(
+
+                                     fillColor: MaterialStateProperty.all<Color>(
+             Color.fromARGB(243, 193, 193, 192)
+            ),
+                                  
                                   value: checkBoxValue,
                                   onChanged: (value) {
                                     setState(() {
@@ -109,15 +116,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(height: 80,),
             MyButton(text: 'Login'),
             SizedBox(height: 15,),
-            Row(mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-              Text("Don’t have an account ?  ",
-              style: TextStyle(color: Colors.white),),
-              
-              TextButton(onPressed: (){}, child:Text(" Sign Up",
-              style: TextStyle(color: Color.fromARGB(249, 163, 249, 249),
-              fontWeight: FontWeight.w400,fontSize: 15),))
-            ],)
+          RowAccount(firstText: "Don’t have an account ?  ", secondText: " Sign Up")
           ],
         ),
       ),
